@@ -1,2 +1,2 @@
 # js-game
-a JS game for you to enjoy
+------------ JS Game by Emaneul -------------
