@@ -7,7 +7,31 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
+/*Smit's edit*/
+// added a keypress function to start the game at any keypress
+$(document).keypress(function(){
+    if(!started)
+    {
+        $("#level-title").text("Level "+level);
+        nextSequence();
+        started = true;
+    }
+});
 
+// for any button clicked, get the details and 
+// play respective sounds 
+// (please make sure the Sounds folder has different sound for each button)
+$(".btn").click(function(){
+   var userChosenColour = $(this).attr("id");
+   userClickedPattern.push(userChosenColour);
+    
+   playSound(userChosenColour);
+   animatePress(userChosenColour);
+    
+   checkAnswer(userClickedPattern.length-1);
+});
+
+/*Smit's edit end*/
 
 function checkAnswer(currentLevel) {
 
